@@ -1,39 +1,17 @@
 import React from 'react';
-import { Container, Header, Title, Card, Content, CardItem, Footer, FooterTab, Button, Left, Right, Body, Icon, Text } from 'native-base';
+import { Root, Container } from 'native-base';
+import AppHeader from './components/AppHeader';
+import AppContent from './components/AppContent';
+import AppFooter from './components/AppFooter';
 
-export default class App extends React.Component {
+class App extends React.Component {
+  
   render() {
     return (
       <Container>
-        <Header>
-          <Left>
-            <Button transparent>
-              <Icon name='menu' />
-            </Button>
-          </Left>
-          <Body>
-            <Title>Header</Title>
-          </Body>
-          <Right />
-        </Header>
-        <Content>
-          <Card>
-            <CardItem>
-              <Body>
-                <Text>
-                  Hello. Check out this sweet card!
-                </Text>
-              </Body>
-            </CardItem>
-          </Card>
-        </Content>
-        <Footer>
-          <FooterTab>
-            <Button full>
-              <Text>Footer</Text>
-            </Button>
-          </FooterTab>
-        </Footer>
+        <AppHeader />
+        <AppContent />
+        <AppFooter />
       </Container>
     );
   }
@@ -47,3 +25,7 @@ export default class App extends React.Component {
   }
 }
 
+export default () => 
+  <Root>
+    <App />
+  </Root>;
